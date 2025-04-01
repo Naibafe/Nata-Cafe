@@ -25,4 +25,30 @@
   align-items: center;
   font-size: 3.5rem;
   font-weight: bolder;
+  color: #674636;
+}
+
+.nav-links {
+  width: 80vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-links > .link-element {
+  margin-right: 4vw;
+  text-decoration: none;
+  background-color: #674636;
+  color: #f7eed3;
+  font-size: 2rem;
+  border-radius: 1rem;
+}
+
+.nav-links > .link-element > p {
+  padding: 0.9rem;
+}
+
+.nav-links > .link-element:hover {
+  background-color: #aab396;
+  color: #f7eed3;
 }
