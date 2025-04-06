@@ -7,7 +7,7 @@ function ProductCard({ product }) {
   function handleAdd() {
     if (!cart.some((p) => p.id == product.id)) {
       const newItem = { ...product, quantity: 1 };
-      setCart([...cart, newItem]);
+      setCart((cart) => [...cart, newItem]);
     } else {
       setCart(
         cart.map((p) =>
@@ -17,6 +17,7 @@ function ProductCard({ product }) {
         )
       );
     }
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
 
   return (
