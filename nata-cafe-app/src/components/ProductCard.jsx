@@ -5,7 +5,18 @@ function ProductCard({ product }) {
   const { cart, setCart } = useContext(CartContext);
 
   function handleAdd() {
-    setCart([...cart, product]);
+    if (!cart.some((p) => p.id == product.id)) {
+      const newItem = { ...product, quantity: 1 };
+      setCart([...cart, newItem]);
+    } else {
+      setCart(
+        cart.map((p) =>
+          p.id == product.id
+            ? { ...p, quantity: p.quantity + 1, price: p.price + product.price }
+            : p
+        )
+      );
+    }
   }
 
   return (
