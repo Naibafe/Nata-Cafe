@@ -26,7 +26,11 @@ function ProductCard({ product }) {
       setCart(
         cart.map((p) =>
           p.id == product.id
-            ? { ...p, quantity: p.quantity + 1, price: p.price + product.price }
+            ? {
+                ...p,
+                quantity: p.quantity + 1,
+                price: Math.round((p.price + product.price) * 100) / 100,
+              }
             : p
         )
       );
