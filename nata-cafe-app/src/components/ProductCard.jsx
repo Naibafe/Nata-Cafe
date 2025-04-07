@@ -5,18 +5,17 @@ function ProductCard({ product }) {
   const { cart, setCart } = useContext(CartContext);
 
   useEffect(() => {
-    if (cart.length > 0) {
-      localStorage.setItem("cart", JSON.stringify(cart));
-    }
-  }, [cart]);
-
-  useEffect(() => {
     if (
       localStorage.getItem("cart") !== "[]" &&
       localStorage.getItem("cart") !== null
-    )
+    ) {
       setCart((cart) => JSON.parse(localStorage.getItem("cart")));
+    }
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   function handleAdd() {
     if (!cart.some((p) => p.id == product.id)) {
