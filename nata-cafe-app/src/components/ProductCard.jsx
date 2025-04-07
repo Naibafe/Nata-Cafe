@@ -3,9 +3,12 @@ import { CartContext } from "../data/CartContext";
 
 function ProductCard({ product }) {
   const { cart, setCart } = useContext(CartContext);
-  if (cart.length > 0) {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  }, [cart]);
 
   useEffect(() => {
     if (
