@@ -1,8 +1,19 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CartContext } from "../data/CartContext";
 
 function ProductCard({ product }) {
   const { cart, setCart } = useContext(CartContext);
+  if (cart.length > 0) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+
+  useEffect(() => {
+    if (
+      localStorage.getItem("cart") !== "[]" &&
+      localStorage.getItem("cart") !== null
+    )
+      setCart((cart) => JSON.parse(localStorage.getItem("cart")));
+  }, []);
 
   function handleAdd() {
     if (!cart.some((p) => p.id == product.id)) {
@@ -17,7 +28,7 @@ function ProductCard({ product }) {
         )
       );
     }
-    localStorage.setItem("cart", JSON.stringify(cart));
+    //localStorage.setItem("cart", JSON.stringify(cart));
   }
 
   return (

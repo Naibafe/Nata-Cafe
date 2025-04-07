@@ -81,4 +81,12 @@ export const data = [
     image:
       "https://cdn.aniagotuje.com/pictures/articles/2019/11/1402361-v-1500x1500.jpg",
   },
+  // {
+  //   id: 11,
+  //   name: "Piwo",
+  //   description: "Wilgotne ciasto z marchewką, orzechami i kremowym serkiem.",
+  //   price: 2.99,
+  //   image:
+  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR392RtJIGIrTCDGss2UAmZAO6SSv4rfsStUQ&s",
+  // },
 ];
