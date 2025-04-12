@@ -20,17 +20,23 @@ function ProductCard({ product }) {
   }, [cart]);
 
   function handleAdd() {
-    if (!cart.some((p) => p.id == product.id)) {
-      const newItem = { ...product, quantity: 1 };
+    const priceSet =
+      size == "S"
+        ? product.price - 2
+        : size == "L"
+        ? product.price + 2
+        : product.price;
+    if (!cart.some((p) => p.id == product.id && p.size == size)) {
+      const newItem = { ...product, quantity: 1, size: size, price: priceSet };
       setCart((cart) => [...cart, newItem]);
     } else {
       setCart(
         cart.map((p) =>
-          p.id == product.id
+          p.id == product.id && p.size == size
             ? {
                 ...p,
                 quantity: p.quantity + 1,
-                price: Math.round((p.price + product.price) * 100) / 100,
+                price: Math.round((p.price + priceSet) * 100) / 100,
               }
             : p
         )
