@@ -1,8 +1,10 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../data/CartContext";
+import SizeSelector from "./SizeSelector";
 
 function ProductCard({ product }) {
   const { cart, setCart } = useContext(CartContext);
+  const [size, setSize] = useState("M");
 
   useEffect(() => {
     if (
@@ -42,8 +44,15 @@ function ProductCard({ product }) {
       <img src={product.image} />
       <p>{product.name}</p>
       <span>{product.price} PLN</span>
-      <div>
-        <button onClick={handleAdd}>Zamów</button>
+      <div className="product-card-bottom-container">
+        <div className="selectors-container">
+          <SizeSelector size={size} setSize={setSize} />
+        </div>
+        <div className="order-button-container">
+          <button onClick={handleAdd} className="product-card-order-button">
+            Zamów
+          </button>
+        </div>
       </div>
     </div>
   );
