@@ -4,7 +4,7 @@ import SizeSelector from "./SizeSelector";
 
 function ProductCard({ product }) {
   const { cart, setCart } = useContext(CartContext);
-  const [size, setSize] = useState("M");
+  const [size, setSize] = useState(product.size);
 
   useEffect(() => {
     if (
@@ -26,8 +26,16 @@ function ProductCard({ product }) {
         : size == "L"
         ? product.price + 2
         : product.price;
+    const multiplyNumber =
+      size == "S" || size == "100g" ? 2 : size == "M" || size == "200g" ? 3 : 4;
     if (!cart.some((p) => p.id == product.id && p.size == size)) {
-      const newItem = { ...product, quantity: 1, size: size, price: priceSet };
+      const newItem = {
+        ...product,
+        quantity: 1,
+        size: size,
+        price: priceSet,
+        tag: product.id * product.price * multiplyNumber,
+      };
       setCart((cart) => [...cart, newItem]);
     } else {
       setCart(
@@ -52,7 +60,11 @@ function ProductCard({ product }) {
       <span>{product.price} PLN</span>
       <div className="product-card-bottom-container">
         <div className="selectors-container">
-          <SizeSelector size={size} setSize={setSize} />
+          <SizeSelector
+            size={size}
+            setSize={setSize}
+            productType={product.type}
+          />
         </div>
         <div className="order-button-container">
           <button onClick={handleAdd} className="product-card-order-button">

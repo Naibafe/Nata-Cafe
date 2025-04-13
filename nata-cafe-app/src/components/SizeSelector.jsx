@@ -1,24 +1,24 @@
-function SizeSelector({ size, setSize }) {
+function SizeSelector({ size, setSize, productType }) {
   return (
     <div className="size-selector">
       <div>
         <button
-          className={size == "S" ? "size-button-active" : ""}
-          onClick={() => setSize("S")}
+          className={size == "S" || size == "100g" ? "size-button-active" : ""}
+          onClick={() => setSize(productType == "coffee" ? "S" : "100g")}
         >
-          S
+          {productType == "coffee" ? "S" : "100g"}
         </button>
         <button
-          className={size == "M" ? "size-button-active" : ""}
-          onClick={() => setSize("M")}
+          className={size == "M" || size == "200g" ? "size-button-active" : ""}
+          onClick={() => setSize(productType == "coffee" ? "M" : "200g")}
         >
-          M
+          {productType == "coffee" ? "M" : "200g"}
         </button>
         <button
-          className={size == "L" ? "size-button-active" : ""}
-          onClick={() => setSize("L")}
+          className={size == "L" || size == "300g" ? "size-button-active" : ""}
+          onClick={() => setSize(productType == "coffee" ? "L" : "300g")}
         >
-          L
+          {productType == "coffee" ? "L" : "300g"}
         </button>
       </div>
     </div>

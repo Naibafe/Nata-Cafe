@@ -37,14 +37,7 @@ function CartElement({ p }) {
         )
       );
     } else {
-      setCart((cart) =>
-        cart.filter(
-          (product) =>
-            product.id != p.id &&
-            product.size != p.size &&
-            product.price != p.price
-        )
-      );
+      setCart((cart) => cart.filter((product) => product.tag != p.tag));
       console.log("test - usunięcie w ELSE");
     }
   }

@@ -12,7 +12,7 @@ function SideBar() {
       <h2>SideBar</h2>
       <div className="sidebar-products">
         {cart.map((p) => (
-          <CartElement p={p} key={p.id} />
+          <CartElement p={p} key={p.tag} />
         ))}
       </div>
     </div>
