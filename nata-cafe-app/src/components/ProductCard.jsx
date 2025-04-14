@@ -6,6 +6,13 @@ function ProductCard({ product }) {
   const { cart, setCart } = useContext(CartContext);
   const [size, setSize] = useState(product.size);
 
+  const priceSet =
+    size == "S"
+      ? product.price - 2
+      : size == "L"
+      ? product.price + 2
+      : product.price;
+
   useEffect(() => {
     if (
       localStorage.getItem("cart") !== "[]" &&
@@ -20,12 +27,6 @@ function ProductCard({ product }) {
   }, [cart]);
 
   function handleAdd() {
-    const priceSet =
-      size == "S"
-        ? product.price - 2
-        : size == "L"
-        ? product.price + 2
-        : product.price;
     const multiplyNumber =
       size == "S" || size == "100g" ? 2 : size == "M" || size == "200g" ? 3 : 4;
     if (!cart.some((p) => p.id == product.id && p.size == size)) {
@@ -57,7 +58,7 @@ function ProductCard({ product }) {
     <div className="product-card">
       <img src={product.image} />
       <p>{product.name}</p>
-      <span>{product.price} PLN</span>
+      <span>{priceSet} PLN</span>
       <div className="product-card-bottom-container">
         <div className="selectors-container">
           <SizeSelector
