@@ -2,7 +2,8 @@
 🧁 Opis ogólny
 
 Nata-Cafe to nowoczesna aplikacja internetowa stworzona dla cukiernio-kawiarni, która umożliwia klientom wygodne przeglądanie oferty produktów, wybieranie rozmiarów zamówień, a także składanie zamówień z opcją dostawy lub odbioru osobistego. Aplikacja została zbudowana przy użyciu biblioteki React i narzędzia Vite, co zapewnia szybkie ładowanie i sprawne działanie interfejsu użytkownika.
-⚙️ Technologie
+
+⚙️ TECHNOLOGIE
 
     React – do budowy komponentów UI
 
@@ -12,8 +13,9 @@ Nata-Cafe to nowoczesna aplikacja internetowa stworzona dla cukiernio-kawiarni, 
 
     React Context API (useContext) – do globalnego zarządzania stanem koszyka
 
-🛠️ Funkcjonalności
-🔍 Strona główna – przegląd produktów
+🛠️ FUNKCJONALNOŚCI
+    
+    Strona główna – przegląd produktów
 
     Wyświetlenie listy dostępnych produktów (ciasta, kawa, desery itp.)
 
@@ -21,7 +23,9 @@ Nata-Cafe to nowoczesna aplikacja internetowa stworzona dla cukiernio-kawiarni, 
 
     Dodawanie produktów do koszyka
 
-🛒 Koszyk
+    Finalne zamówienie i wybór dostawy
+
+🛒 KOSZYK
 
     Zarządzanie zawartością koszyka z wykorzystaniem useContext
 
@@ -29,7 +33,7 @@ Nata-Cafe to nowoczesna aplikacja internetowa stworzona dla cukiernio-kawiarni, 
 
     Możliwość modyfikacji lub usunięcia pozycji z koszyka
 
-🚚 Składanie zamówienia
+🚚 SKŁADANIE ZAMÓWIENIA
 
     Wybór formy realizacji zamówienia:
 
@@ -43,9 +47,11 @@ Nata-Cafe to nowoczesna aplikacja internetowa stworzona dla cukiernio-kawiarni, 
 
 W aplikacji wykorzystano react-router-dom do obsługi nawigacji między stronami, np.:
 
-    / – Strona główna z produktami
+    / – Strona główna
 
-    /cart – Koszyk
+    /contact - Strona z kontaktem
+
+    /products - Strona z produktami
 
     /checkout – Finalizacja zamówienia
 
@@ -53,11 +59,16 @@ W aplikacji wykorzystano react-router-dom do obsługi nawigacji między stronami
 
 🧱 Architektura stanu
 
-Aplikacja używa Context API do przechowywania i zarządzania stanem koszyka, co umożliwia:
+    Aplikacja używa Context API do przechowywania i zarządzania stanem koszyka, co umożliwia:
 
     Globalny dostęp do danych koszyka z dowolnego komponentu
 
     Skalowalność i prostotę zarządzania logiką dodawania/usuwania produktów
+    
+
+    Wykorzystanie useState do prostrzych zadań lokalnych ze stanem
+
+    Wykorzystanie useEffect do przeprowadzenia synchronizacji i działań w procesach zarządzania danymi aplikacji
 
 🧭 Możliwości rozwoju (planowane funkcje)
 
@@ -77,8 +88,3 @@ Aplikacja używa Context API do przechowywania i zarządzania stanem koszyka, co
 
         Lepsza obsługa na urządzeniach mobilnych
 
-        Możliwość dodania aplikacji do ekranu głównego jako PWA
-
-🖼️ UI/UX
-
-Interfejs aplikacji jest intuicyjny, estetyczny i zoptymalizowany pod kątem użytkowników końcowych – zarówno na komputerach, jak i urządzeniach mobilnych. Kolorystyka i typografia nawiązują do klimatu nowoczesnej kawiarni z domową atmosferą.
