@@ -7,9 +7,9 @@ function ProductCard({ product }) {
   const [size, setSize] = useState(product.size);
 
   const priceSet =
-    size == "S"
+    size == "S" || size == "100g"
       ? product.price - 2
-      : size == "L"
+      : size == "L" || size == "300g"
       ? product.price + 2
       : product.price;
 

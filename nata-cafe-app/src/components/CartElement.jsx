@@ -53,6 +53,10 @@ function CartElement({ p }) {
             <br />
           </>
         ) : null}
+        <span className="sidebar-product-element-quantity">
+          Rozmiar: {p.size}
+        </span>
+        <br />
         <span className="sidebar-product-element-price">{p.price} PLN</span>
       </div>
       <div className="sidebar-product-element-btn">
