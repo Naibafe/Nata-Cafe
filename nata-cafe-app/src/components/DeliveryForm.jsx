@@ -1,9 +1,27 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
+import { CartContext } from "../data/CartContext";
 
 function DeliveryForm() {
+  const { cart, setCart } = useContext(CartContext);
   const [city, setCity] = useState("");
   const [adress, setAdress] = useState("");
-  function handlePay() {}
+  useEffect(() => {
+    if (
+      localStorage.getItem("cart") !== "[]" &&
+      localStorage.getItem("cart") !== null
+    ) {
+      setCart((cart) => JSON.parse(localStorage.getItem("cart")));
+    }
+  }, []);
+  const totalPrice =
+    Math.round(cart.reduce((acc, product) => acc + product.price, 0) * 100) /
+    100;
+  function handlePay() {
+    setCity("");
+    setAdress("");
+    localStorage.setItem("cart", "[]");
+    setCart([]);
+  }
   return (
     <div className="delivery-form">
       <h2>Dane do dostawy</h2>
@@ -19,7 +37,7 @@ function DeliveryForm() {
         value={adress}
         onChange={(e) => setAdress(e.target.value)}
       />
-      <h3>Cena zamówienia: </h3>
+      <h3>Cena zamówienia: {totalPrice} PLN</h3>
       <button onClick={handlePay}>Zapłać</button>
     </div>
   );
