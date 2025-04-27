@@ -9,6 +9,7 @@ import MainBody from "./pages/MainBody";
 import ProductContainer from "./components/ProductContainer";
 import { data } from "./data/Products";
 import Delivery from "./pages/Delivery";
+import Summary from "./pages/Summary";
 
 function App() {
   const { cart, setCart } = useContext(CartContext);
@@ -23,6 +24,7 @@ function App() {
           <Route path="/kontakt" element={<Contact />} />
           <Route path="/" element={<ProductContainer products={products} />} />
           <Route path="/dostawa" element={<Delivery />} />
+          <Route path="/podsumowanie" element={<Summary />} />
         </Routes>
       </MainBody>
     </BrowserRouter>
