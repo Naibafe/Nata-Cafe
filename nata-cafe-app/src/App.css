@@ -286,3 +286,27 @@
   font-size: 2.5rem;
   color: #f7eed3;
 }
+
+.contact-div {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-div div {
+  background-color: #f7eed3;
+  border-radius: 1rem;
+  width: 50%;
+  height: 70%;
+  -webkit-box-shadow: 11px 11px 28px -3px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 11px 11px 28px -3px rgba(66, 68, 90, 1);
+  box-shadow: 11px 11px 28px -3px rgba(66, 68, 90, 1);
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.contact-div > div > ul > li {
+  list-style-type: none;
+}
