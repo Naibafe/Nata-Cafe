@@ -24,7 +24,9 @@ function SideBar() {
       <div className="sidebar-sumup">
         <p>Cena: {totalPrice} PLN</p>
       </div>
-      <button onClick={() => navigation("/dostawa")}>Przejdź dalej</button>
+      <button onClick={() => navigation("/dostawa")} className="sidebar-button">
+        Przejdź dalej
+      </button>
     </div>
   );
 }

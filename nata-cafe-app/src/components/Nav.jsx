@@ -13,8 +13,8 @@ export default function Nav() {
         <NavLink to="/" className="link-element">
           <p>Produkty</p>
         </NavLink>
-        <NavLink to="/kontakt" className="link-element">
-          <p>Kontakt</p>
+        <NavLink to="/dostawa" className="link-element">
+          <p>Dostawa</p>
         </NavLink>
       </div>
     </div>

@@ -87,7 +87,7 @@
 }
 
 .sidebar-sumup {
-  height: 15%;
+  height: 10%;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -234,4 +234,55 @@
   background-color: #674636;
   color: #f7eed3;
   font-weight: bold;
+}
+
+.delivery-form {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delivery-form div {
+  background-color: #f7eed3;
+  border-radius: 1rem;
+  width: 50%;
+  height: 70%;
+  -webkit-box-shadow: 11px 11px 28px -3px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 11px 11px 28px -3px rgba(66, 68, 90, 1);
+  box-shadow: 11px 11px 28px -3px rgba(66, 68, 90, 1);
+  padding: 2rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.delivery-form button {
+  background-color: #674636;
+  color: #f7eed3;
+  font-size: 2rem;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.sidebar-button {
+  background-color: #674636;
+  color: #f7eed3;
+  font-size: 2rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-left: 40%;
+  margin-bottom: 5%;
+}
+
+.summary {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.summary div {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #f7eed3;
 }

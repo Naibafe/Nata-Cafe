@@ -6,7 +6,7 @@ export const data = [
       "Intensywna, aromatyczna kawa z jednej porcji zmielonych ziaren.",
     price: 9.99,
     image:
-      "https://i0.wp.com/finestcoffee.pl/blog/wp-content/uploads/2024/08/nathan-dumlao-l59fmhtprIE-unsplash.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCLY5GYT5ksGCiVD-uX-vnw-UrJeNtdrhLPA&s",
     type: "coffee",
     size: "M",
   },
