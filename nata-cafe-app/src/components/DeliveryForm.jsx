@@ -19,11 +19,13 @@ function DeliveryForm() {
     Math.round(cart.reduce((acc, product) => acc + product.price, 0) * 100) /
     100;
   function handlePay() {
-    setCity("");
-    setAdress("");
-    localStorage.setItem("cart", "[]");
-    setCart([]);
-    navigation("/podsumowanie");
+    if (city != "" && adress != "") {
+      setCity("");
+      setAdress("");
+      localStorage.setItem("cart", "[]");
+      setCart([]);
+      navigation("/podsumowanie");
+    }
   }
   return (
     <div className="delivery-form">
